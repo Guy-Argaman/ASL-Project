@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/learn-stylesheet.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <title>Learn The Signs</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="top">
+        <div class="navbar">
+            <a href="index.html" class="navbar-item">HOME</a>
+            <div class="dropdown">
+                <div class="navbar-item" title="Games List">GAMES</div>
+                <div class="dropdown-content">
+                    <a href="asl.html" class="dropdown-item">ASL To Text Converter</a>
+                    <a href="matrixgame.html" class="dropdown-item">Matrix Game</a>
+                </div>
+            </div>
+            <div class="sound" onclick="mute(this)" title="Click to Mute">🔊</div>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <div class="images-wrapper">
+        </div>
+    </div>
+    <br>
+        <div class="warn-msg">Invalid character, please use letters</div>
+        <br>
+        <div class="btns-container">
+            <button class="play-btn" onclick="startGame()"><span>▶</span></button>
+        </div>
+    </div>
+    </div>
+    <script src="js/learn.js"></script>
+</body>
+
+</html>

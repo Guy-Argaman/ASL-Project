@@ -1,0 +1,64 @@
+.container {
+    padding-top: 50px;
+}
+
+.images-wrapper {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+
+.img {
+    height: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: all 0.1s;
+}
+
+.play-btn {
+    box-sizing: border-box;
+    justify-self: left;
+    display: block;
+    width: 150px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(119, 44, 44);
+    box-shadow: 0 9px red;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.play-btn span {
+    font-size: 60px;
+    width: 100px;
+    text-align: center;
+}
+
+.play-btn:active {
+    background-color: green;
+    box-shadow: 0px 0px 0px 0px green;
+    transform: translateY(10px);
+}
+
+.play-btn--active {
+    background-color: green;
+    box-shadow: 0 0px red;
+    transform: translateY(10px);
+}
+
+.warn-msg {
+    font-family: Impact;
+    color: red;
+    justify-self: center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.btns-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    justify-items: center;
+}
