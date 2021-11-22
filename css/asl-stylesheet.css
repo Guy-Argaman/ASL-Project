@@ -1,0 +1,62 @@
+#header {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-family: fantasy;
+    padding-top: 40px;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+}
+
+.input-container {
+    display: grid;
+    justify-content: center;
+}
+
+.images-wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-items: center;
+}
+
+.img {
+    height: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: all 0.1s;
+}
+
+.user-input {
+    display: grid;
+    color: black;
+    justify-content: center;
+    size: 50px;
+}
+
+.anchor-container {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    background-color: #333;
+    top: 0%;
+    width: 100%;
+    right: 0%;
+}
+
+.anchor-container a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.anchor-container a:hover {
+    background: #ddd;
+    color: black;
+}

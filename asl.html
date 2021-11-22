@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/asl-stylesheet.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>ASL Fingerspelling Translator</title>
+</head>
+
+<body>
+     <!-- Navbar -->
+     <div class="top">
+        <div class="navbar">
+            <a href="index.html" class="navbar-item">HOME</a>
+            <div class="dropdown">
+                <div class="navbar-item" title="Games List">GAMES</div>
+                <div class="dropdown-content">
+                    <a href="speedgame.html" class="dropdown-item">Speed Game</a>
+                    <a href="matrixgame.html" class="dropdown-item">Matrix Game</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header">ASL Fingerspelling Translator</div>
+    <br>
+    <div class="container">
+        <div class="images-wrapper">
+        </div>
+    </div>
+    <br>
+    <div class="input-container">
+        <input class="user-input" type="text" size="50" placeholder="Insert text here" oninput="showSigns()"></input>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

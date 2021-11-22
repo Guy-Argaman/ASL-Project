@@ -1,0 +1,253 @@
+.top-img {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+footer p {
+    display: flex;
+    grid-gap: 5px;
+    background-color: grey;
+    padding: 10px;
+    justify-content: center;
+}
+
+.page-content {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.title {
+    display: grid;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 50px;
+    margin: 0px;
+    text-shadow: 5px 5px grey;
+    text-transform: uppercase;
+    text-overflow: clip;
+    /* animation: 1s ease-out 0s 1 headerBounce; */
+}
+
+.page-head {
+    margin-bottom: -1px;
+}
+
+.page-subhead {
+    font-style: italic;
+}
+
+.page-text {
+    width: 90%;
+    text-align: center;
+    font-family: Tahoma;
+}
+
+.page-items {
+    display: inline-grid;
+    grid-template-columns: repeat(5, 3fr);
+    grid-column-gap: 50px;
+}
+
+#img-center {
+    display: flex;
+    width: auto;
+    height: 84px;
+    image-resolution: auto;
+    align-items: center;
+    border: 1px transparent solid;
+    transition: all 1s ease-in-out;
+    animation: 1s ease-out 0s 1 pictureScale;
+}
+
+#img-right {
+    display: flex;
+    width: auto;
+    height: 84px;
+    image-resolution: auto;
+    align-items: center;
+    border: 1px transparent solid;
+    transition: all 1s ease-in-out;
+    animation: 1s ease-out 0s 1 pictureScale;
+}
+
+#img-left {
+    display: flex;
+    width: auto;
+    height: 84px;
+    image-resolution: auto;
+    align-items: center;
+    border: 1px transparent solid;
+    transition: all 1s ease-in-out;
+    animation: 1s ease-out 0s 1 pictureScale;
+}
+
+#img-left:hover {
+    transform: scale(4) translateX(150px);
+    left: 50%;
+    right: 50%;
+    transform-origin: center;
+    display: grid;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transition: all 1s ease-in-out;
+    z-index: 999;
+    border: 1px solid;
+}
+
+#img-center:hover {
+    transform: scale(5);
+    left: 50%;
+    right: 50%;
+    transform-origin: center;
+    display: grid;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transition: all 1s ease-in-out;
+    z-index: 999;
+    border: 1px solid;
+}
+
+#img-right:hover {
+    transform: scale(7) translateX(-90px);
+    transform-origin: center;
+    display: grid;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transition: all 1s ease-in-out;
+    z-index: 999;
+    border: 1px solid;
+}
+
+.img-text {
+    justify-self: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: fantasy;
+    /* animation: 1s ease-out 0s 1 textSlide; */
+}
+
+/* ANIMATIONS */
+
+@keyframes pictureScale {
+    0% {
+        transform: scale(0);
+        border: 1px solid black;
+        border-radius: 25px;
+    }
+
+    100% {
+        transform: scale(unset);
+    }
+}
+
+#img-left:hover+.ASL-desc {
+    transition: opacity 2s ease-out;
+    opacity: 5;
+    z-index: 999;
+}
+
+#img-center:hover+.speedgame-desc {
+    transition: opacity 2s ease-out;
+    opacity: 5;
+    z-index: 999;
+}
+
+#img-right:hover+.matrixgame-desc {
+    transition: opacity 2s ease-out;
+    opacity: 5;
+    z-index: 999;
+}
+
+.ASL-desc {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid;
+    position: absolute;
+    transform-origin: center;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transform: scale(4) translateX(160px) translateY(50px);
+    opacity: 0;
+    text-align: center;
+    font-size: 5px;
+    transition: opacity 1s;
+    width: 200px;
+    line-height: 1.5em;
+}
+
+.speedgame-desc {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid;
+    position: absolute;
+    transform-origin: center;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transform: scale(4) translateX(0px) translateY(60px);
+    opacity: 0;
+    text-align: center;
+    font-size: 5px;
+    transition: opacity 1s;
+    width: 200px;
+    line-height: 1.5em;
+}
+
+.matrixgame-desc {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid;
+    position: absolute;
+    transform-origin: center;
+    text-align: center;
+    image-rendering: optimizeQuality;
+    transform: scale(4) translateX(-150px) translateY(80px);
+    opacity: 0;
+    text-align: center;
+    font-size: 5px;
+    transition: opacity 1s;
+    width: 200px;
+    line-height: 1.5em;
+}
+
+.background-image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* ANIMATIONS SAVED */
+/* @keyframes textSlide {
+    0% {
+        transform: translateX(-1000%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+} */
+
+/* @keyframes headerBounce {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    80% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(unset);
+    }
+} */
