@@ -17,48 +17,119 @@
     transition: all 0.1s;
 }
 
-.play-btn {
+.return-btn {
     box-sizing: border-box;
-    justify-self: left;
-    display: block;
-    width: 150px;
-    height: 100px;
-    border-radius: 50px;
     border: none;
-    background-color: rgb(119, 44, 44);
-    box-shadow: 0 9px red;
     cursor: pointer;
     transition: all 0.2s;
+    transform: translateX(-50px);
+    animation: nudgeLeft 1s ease-in-out;
 }
 
-.play-btn span {
+.return-btn span {
     font-size: 60px;
     width: 100px;
     text-align: center;
 }
 
-.play-btn:active {
-    background-color: green;
-    box-shadow: 0px 0px 0px 0px green;
-    transform: translateY(10px);
-}
-
-.play-btn--active {
+.return-btn--active {
     background-color: green;
     box-shadow: 0 0px red;
-    transform: translateY(10px);
+    transform: translateX(-60px);
+    transition: all 0.1s;
 }
 
-.warn-msg {
+.return-btn:active {
+    background-color: green;
+    transform: translateX(-60px);
+    box-shadow: 0px 0px 0px 0px green;
+}
+
+.fwd-btn {
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: nudgeRight 1s ease-in-out;
+    margin-left: 40px;
+}
+
+.fwd-btn span {
+    font-size: 60px;
+    width: 100px;
+    text-align: center;
+}
+
+/* CHANGE STYLE ON CLICK */
+.fwd-btn--active {
+    background-color: green;
+    box-shadow: 0px 0px 0px 0px green;
+    transform: translateX(10px);
+    transition: all 0.1s;
+}
+
+/* CHANGE STYLE ON KEY PRESS */
+
+.fwd-btn:active {
+    background-color: green;
+    box-shadow: 0px 0px 0px 0px green;
+    transform: translateX(10px);
+}
+
+@keyframes nudgeRight {
+    0% {
+        transform: translateX(1000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes nudgeLeft {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(-50px);
+    }
+}
+
+.msg {
     font-family: Impact;
+    font-size: 50px;
     color: red;
     justify-self: center;
-    opacity: 0;
     transition: all 0.5s;
 }
 
 .btns-container {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    display: flex;
+    justify-content: center;
     justify-items: center;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+#video {
+    display: block;
+    margin: 0 auto;
+    animation: reveal 1s ease-in-out;
+    transition: 1s all;
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateY(250px);
+        opacity: 0;
+        border-radius: 50%;
+        box-shadow: 20px 20px 20px black;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100px;
+        border-radius: 0%;
+    }
 }

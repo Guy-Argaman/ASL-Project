@@ -68,7 +68,7 @@ function updateColorImg() {
     return correctImageEl;
 }
 
-function startGame() {
+function nextSign() {
     let playBtn = document.querySelector('.play-btn');
     let playBtnSpan = document.querySelector('.play-btn span');
     gameOver = !gameOver;

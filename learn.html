@@ -19,7 +19,6 @@
                     <a href="matrixgame.html" class="dropdown-item">Matrix Game</a>
                 </div>
             </div>
-            <div class="sound" onclick="mute(this)" title="Click to Mute">🔊</div>
         </div>
     </div>
     <div class="container">
@@ -27,12 +26,21 @@
         <div class="images-wrapper">
         </div>
     </div>
-    <br>
-        <div class="warn-msg">Invalid character, please use letters</div>
+    <div class="btns-container">
+        <button class="return-btn" onclick="lastSign()"><span>◀</span></button>
         <br>
-        <div class="btns-container">
-            <button class="play-btn" onclick="startGame()"><span>▶</span></button>
-        </div>
+        <div class="msg"></div>
+        <br>
+        <button class="fwd-btn" onclick="nextSign()"><span>▶</span></button>
+    </div>
+    <video width="640" height="360" controls="controls" id="video">
+        <source src="Video/ASL Video.mp4" type="video/mp4" />
+        <track id="sub" default kind="captions" srclang="en" src="Video/sub.vtt" />>
+    </video>
+    <!-- SPEECH RECOGNITION -->
+    <div id="resume"></div>
+    <div id="final_span"></div>
+    <div id="interim_span"></div>
     </div>
     </div>
     <script src="js/learn.js"></script>
