@@ -26,6 +26,7 @@ function init() {
     let guessLetterEl = document.querySelector('.guess-letter');
     let cutStr = assignedLetter[7];
     guessLetterEl.innerText = `Find the sign: ${cutStr}`;
+    console.log(guessLetterEl);
     renderBoard();
 }
 
@@ -62,6 +63,7 @@ function updateColorImg() {
         let currentImageEl = imagesEl[h].src.slice(22, imagesEl[h].length);
         if (currentImageEl === assignedLetter) {
             correctImageEl = imagesEl[h];
+            console.log(correctImageEl);
         }
     }
     return correctImageEl;
@@ -197,7 +199,7 @@ function fillImagesMatrix() {
             gBoard[i][j] = newImage;
         }
     }
-    return newImages;
+    return newImages
 }
 
 function findNewImage() {
