@@ -26,7 +26,7 @@ function init() {
     let guessLetterEl = document.querySelector('.guess-letter');
     let cutStr = assignedLetter[7];
     guessLetterEl.innerText = `Find the sign: ${cutStr}`;
-    console.log(guessLetterEl);
+    imageElAltUpdate();
     renderBoard();
 }
 
@@ -56,18 +56,23 @@ function renderBoard() {
     elTable.innerHTML = strHTML;
 }
 
-function revealCorrectImage() {
+// function revealCorrectImage() {
+//     let imagesEl = document.querySelectorAll('img');
+//     let correctImageEl;
+//     for (let h = 0; h < imagesEl.length; h++) {
+//         imagesEl[h].alt = imagesEl[h].src;
+//         console.log(imagesEl[h]);
+//     }
+//     return correctImageEl;
+// }
+
+function imageElAltUpdate() {
     let imagesEl = document.querySelectorAll('img');
     let correctImageEl;
+    console.log(imagesEl);
     for (let h = 0; h < imagesEl.length; h++) {
-        let currentImageEl = imagesEl[h].src.slice(22, imagesEl[h].length);
-        console.log(correctImageEl, 'correctImageEl');
-        console.log(currentImageEl, 'currentImageEl');
-        console.log(assignedLetter, 'assignedLetter');
-        if (currentImageEl === assignedLetter) {
-            correctImageEl = imagesEl[h];
-            console.log(correctImageEl, 'correctImageEl');
-        }
+        console.log(imagesEl[h].outerHTML);
+        imagesEl[h].alt = imagesEl[h].src;
     }
     return correctImageEl;
 }
@@ -171,8 +176,9 @@ function cellClicked(cell) {
         return;
     }
     cell.classList.add('color-change');
-    let clickedCell = cell.querySelector('img').src;
-    clickedCell = clickedCell.slice(22, clickedCell.length);
+    let clickedCell = cell.querySelector('img').srcText;
+    // clickedCell = clickedCell.slice(22, clickedCell.length);
+    console.log(clickedCell);
     if (clickedCell === assignedLetter) {
         correctAnswer = true;
         playAnimation();
