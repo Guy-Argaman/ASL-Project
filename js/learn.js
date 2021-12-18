@@ -101,6 +101,9 @@ video.addEventListener('timeupdate', (event) => {
 
 function checkCaptions() {
     let tracks = document.querySelector('#video').textTracks[0];
+    if (tracks.activeCues === null) {
+        return;
+    }
     let newStr;
     if (tracks.activeCues.length > 0) {
         newStr = tracks.activeCues[0].text;
