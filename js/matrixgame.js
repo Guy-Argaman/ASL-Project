@@ -62,6 +62,8 @@ function revealCorrectImage() {
     for (let h = 0; h < imagesEl.length; h++) {
         let currentImageEl = imagesEl[h].src.slice(22, imagesEl[h].length);
         console.log(correctImageEl, 'correctImageEl');
+        console.log(currentImageEl, 'currentImageEl');
+        console.log(assignedLetter, 'assignedLetter');
         if (currentImageEl === assignedLetter) {
             correctImageEl = imagesEl[h];
             console.log(correctImageEl, 'correctImageEl');
