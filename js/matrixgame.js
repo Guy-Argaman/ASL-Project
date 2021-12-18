@@ -149,8 +149,9 @@ function progressBar() {
                     width++;
                 }
                 if (width >= 100) {
-                    let correctImageEl = revealCorrectImage();
-                    console.log(correctImageEl);
+                    // let correctImageEl = revealCorrectImage();
+                    // console.log(correctImageEl, 'TEST');
+                    revealCorrectImage();
                     // correctImageEl.style.backgroundColor = 'green';
                 }
                 barEl.style.width = width + "%";
