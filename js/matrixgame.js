@@ -2,6 +2,7 @@
 let gameOver = true;
 let correctAnswer = false;
 let assignedLetter;
+let correctImageEl;
 // PROGRESS BAR
 let width = 0;
 let i = 0;
@@ -26,7 +27,6 @@ function init() {
     let guessLetterEl = document.querySelector('.guess-letter');
     let cutStr = assignedLetter[7];
     guessLetterEl.innerText = `Find the sign: ${cutStr}`;
-    imageElAltUpdate();
     renderBoard();
 }
 
@@ -54,25 +54,17 @@ function renderBoard() {
     strHTML += '</tbody>';
     let elTable = document.querySelector('.game-board');
     elTable.innerHTML = strHTML;
+    imageElAltUpdate();
 }
-
-// function revealCorrectImage() {
-//     let imagesEl = document.querySelectorAll('img');
-//     let correctImageEl;
-//     for (let h = 0; h < imagesEl.length; h++) {
-//         imagesEl[h].alt = imagesEl[h].src;
-//         console.log(imagesEl[h]);
-//     }
-//     return correctImageEl;
-// }
 
 function imageElAltUpdate() {
     let imagesEl = document.querySelectorAll('img');
-    let correctImageEl;
-    console.log(imagesEl);
     for (let h = 0; h < imagesEl.length; h++) {
-        console.log(imagesEl[h].outerHTML);
-        imagesEl[h].alt = imagesEl[h].src;
+        let newImageAlt = imagesEl[h].outerHTML.slice(10, imagesEl[h].outerHTML.length - 2);
+        imagesEl[h].alt = newImageAlt;
+        if (newImageAlt === assignedLetter) {
+            correctImageEl = imagesEl[h];
+        }
     }
     return correctImageEl;
 }
@@ -154,10 +146,7 @@ function progressBar() {
                     width++;
                 }
                 if (width >= 100) {
-                    // let correctImageEl = revealCorrectImage();
-                    // console.log(correctImageEl, 'TEST');
-                    revealCorrectImage();
-                    // correctImageEl.style.backgroundColor = 'green';
+                    correctImageEl.style.backgroundColor = 'green';
                 }
                 barEl.style.width = width + "%";
             }
@@ -176,10 +165,8 @@ function cellClicked(cell) {
         return;
     }
     cell.classList.add('color-change');
-    let clickedCell = cell.querySelector('img').srcText;
-    // clickedCell = clickedCell.slice(22, clickedCell.length);
-    console.log(clickedCell);
-    if (clickedCell === assignedLetter) {
+    let clickedCell = cell.querySelector('img').alt;
+    if (clickedCell === correctImageEl.alt) {
         correctAnswer = true;
         playAnimation();
         progressBar();
