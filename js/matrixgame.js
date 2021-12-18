@@ -56,14 +56,14 @@ function renderBoard() {
     elTable.innerHTML = strHTML;
 }
 
-function updateColorImg() {
+function revealCorrectImage() {
     let imagesEl = document.querySelectorAll('img');
     let correctImageEl;
     for (let h = 0; h < imagesEl.length; h++) {
         let currentImageEl = imagesEl[h].src.slice(22, imagesEl[h].length);
         if (currentImageEl === assignedLetter) {
             correctImageEl = imagesEl[h];
-            console.log(correctImageEl);
+            console.log(correctImageEl, 'correctImageEl');
         }
     }
     return correctImageEl;
@@ -146,7 +146,7 @@ function progressBar() {
                     width++;
                 }
                 if (width >= 100) {
-                    let correctImageEl = updateColorImg();
+                    let correctImageEl = revealCorrectImage();
                     correctImageEl.style.backgroundColor = 'green';
                 }
                 barEl.style.width = width + "%";
@@ -207,16 +207,6 @@ function findNewImage() {
     let randomLetter = getRandomInt(0, 25);
     newImage = `Images/${String.fromCharCode(randomLetter + 'A'.charCodeAt(0))}.png`;
     return newImage;
-}
-
-function warnUserMsg() {
-    let warnMsg = document.querySelector('.warn-msg');
-    warnMsg.classList.add('opacity');
-}
-
-function removeWarnMsg() {
-    let warnMsg = document.querySelector('.warn-msg');
-    warnMsg.classList.remove('opacity');
 }
 
 function calculateHighScore() {
