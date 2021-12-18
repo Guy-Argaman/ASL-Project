@@ -53,7 +53,6 @@ function renderBoard() {
     strHTML += '</tbody>';
     let elTable = document.querySelector('.game-board');
     elTable.innerHTML = strHTML;
-    updateColorImg();
 }
 
 function updateColorImg() {
