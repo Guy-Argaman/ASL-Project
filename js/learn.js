@@ -80,7 +80,7 @@ function lastSign() {
     showSign();
 }
 
-async function showSign() {
+function showSign() {
     let msg = document.querySelector('.msg');
     msg.innerText = `${String.fromCharCode(newSign + 'A'.charCodeAt(0))}`;
     let newImage;
@@ -99,8 +99,12 @@ video.addEventListener('timeupdate', (event) => {
     checkCaptions();
 });
 
+let tracks = video.textTracks;
+tracks.addEventListener('change', hideCaptions);
+
 function checkCaptions() {
     let tracks = document.querySelector('#video').textTracks[0];
+
     if (tracks.activeCues === null) {
         return;
     }
@@ -115,5 +119,13 @@ function checkCaptions() {
             newSign = sign[1].charCodeAt(sign[1]) - 65;
             showSign();
         }
+    }
+}
+
+function hideCaptions() {
+    let track = document.querySelector('#video').textTracks[0];
+    let isTrackDisabled = track.mode === 'disabled';
+    if (isTrackDisabled) {
+        track.mode = 'hidden';
     }
 }

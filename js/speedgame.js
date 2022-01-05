@@ -4,19 +4,22 @@ let imageWrapperEl = document.querySelector('.images-wrapper');
 let gameOver = true;
 let currentImage;
 let correctAnswer = false;
-// PROGRESS BAR
+// #region PROGRESS BAR
 let width = 0;
 let i = 0;
 let barEl = document.querySelector('.slide-progress-bar');
 let highScore = document.querySelector('.high-score span');
 let score = document.querySelector('.score span');
-// Difficulty Settings
+// #endregion
+// #region Difficulty Settings
 let checkBox = document.querySelector('#checkbox');
 let toggleDiff;
 let difficulty = 1;
-// Animation
+//#endregion
+//#region Animation
 let animation = 'draw 0.5s ease';
 let checkMark = document.querySelector('#check');
+//#endregion
 // Sound
 let toggleSound = true;
 
@@ -27,8 +30,7 @@ function startGame() {
     gameOver = !gameOver;
     if (!gameOver) {
         userInput.focus();
-        userInput.select();
-        playBtn.classList.add('play-btn--active')
+        playBtn.classList.add('play-btn--active');
         playBtnSpan.innerText = '❚❚';
         barEl.style.opacity = 1;
         progressBar();
@@ -38,7 +40,7 @@ function startGame() {
     }
 }
 
-function toggleDifficulty() {
+function toggleSpeedDiff() {
     if (gameOver) {
         toggleDiff = !toggleDiff;
         // TOGGLE TEXT COLOR
@@ -56,12 +58,8 @@ function toggleDifficulty() {
         }
     }
 }
-
 function setDifficulty() {
-    difficulty++;
-    if (Number(score.innerText) % 5 === 0) {
-        difficulty = 1;
-    }
+    difficulty = difficulty % 5 === 0 ? 1 : ++difficulty;
 }
 
 function endGame() {
@@ -70,11 +68,6 @@ function endGame() {
     playBtnSpan.innerText = '▶';
     playBtn.classList.remove('play-btn--active');
     gameOver = true;
-    if (Number(score.innerText) < Number(highScore.innerText)) {
-        score.innerText = 0;
-        return;
-    }
-    highScore.innerText = score.innerText;
     score.innerText = 0;
 }
 
@@ -184,7 +177,6 @@ function userGuessInput() {
         userInput.value = null;
         if (toggleDiff) {
             setDifficulty();
-            difficulty++;
         }
         progressBar();
     } else {
@@ -206,6 +198,9 @@ function calculateHighScore() {
     correctAnswer ? scoreText++ : scoreText--;
     if (scoreText < 0) {
         scoreText = 0;
+    }
+    if (scoreText > Number(highScore.innerText)) {
+        Number(highScore.innerText++);
     }
     score.innerText = scoreText;
 }
