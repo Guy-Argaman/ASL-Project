@@ -1,10 +1,12 @@
 'use strict';
+// #region Global Variables
 let userInput = document.querySelector('.user-input');
 let imageWrapperEl = document.querySelector('.images-wrapper');
 let gameOver = true;
 let currentImage;
 let correctAnswer = false;
-// #region PROGRESS BAR
+// #endregion
+// #region Progress Bar
 let width = 0;
 let i = 0;
 let barEl = document.querySelector('.slide-progress-bar');

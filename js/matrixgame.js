@@ -1,20 +1,25 @@
 'use strict';
+//#region Global Variables
 let gameOver = true;
 let correctAnswer = false;
 let assignedLetter;
 let correctImageEl;
-// PROGRESS BAR
+//#endregion
+//#region Progress Bar
 let width = 0;
 let i = 0;
 let barEl = document.querySelector('.slide-progress-bar');
 let highScore = document.querySelector('.high-score span');
 let score = document.querySelector('.score span');
-// Difficulty Settings
+//#endregion
+//#region Difficulty Settings
 let toggleDiff = false;
 let difficulty = 1;
-// Animation
+//#endregion
+//#region Animation
 let animation = 'draw 0.5s ease';
 let checkMark = document.querySelector('#check');
+//#endregion
 // Sound
 let toggleSound = true;
 
