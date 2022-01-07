@@ -4,10 +4,10 @@
     width: 100%;
 }
 
-html {
-    /* body won't work ¯\_(ツ)_/¯ */
-    scroll-snap-type: y mandatory;
-}
+/* html { 
+ body won't work ¯\_(ツ)_/¯ 
+ scroll-snap-type: y mandatory; 
+ } */
 
 body {
     min-height: 100vh;
@@ -16,15 +16,15 @@ body {
 }
 
 footer {
-    margin-top: auto;
-}
-
-footer p {
-    display: flex;
-    grid-gap: 5px;
+    display: inline-flex;
     background-color: grey;
-    padding: 5px;
+    grid-gap: 5px;
+    width: 100%;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 3px;
 }
 
 .page-content {
