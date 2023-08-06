@@ -155,19 +155,19 @@ h3 {
     }
 }
 
-#img-left:hover+.ASL-desc {
+#img-left:hover + .ASL-desc {
     transition: opacity 2s ease-out;
     opacity: 5;
     z-index: 999;
 }
 
-#img-center:hover+.speedgame-desc {
+#img-center:hover + .speedgame-desc {
     transition: opacity 2s ease-out;
     opacity: 5;
     z-index: 999;
 }
 
-#img-right:hover+.matrixgame-desc {
+#img-right:hover + .matrixgame-desc {
     transition: opacity 2s ease-out;
     opacity: 5;
     z-index: 999;
@@ -284,27 +284,27 @@ img {
 
 @-webkit-keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4;
     }
 
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4;
     }
 
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .text {
-        font-size: 11px
+        font-size: 11px;
     }
 }
